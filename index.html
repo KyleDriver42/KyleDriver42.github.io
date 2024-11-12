@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .box {
+    width: 60px;
+    height: 40px;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 50px;
+    background-color: aquamarine;
+    margin: 1px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  #right-aligned-boxes {
+  display: inline-block;
+  flex-direction: column;
+  align-items: flex-end;
+  width: fit-content;
+  vertical-align: top;
+  justify-items: right;
+  margin-left: 3%;    
+}
+
+#left-aligned-boxes {
+  display: inline-block;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  vertical-align: top;
+  margin-right: 3%   
+}
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 150px;
+    text-align: left;
+    background-color: white;
+    border: 4px solid black;
+    z-index: 1;
+  }
+
+  .dropdown div {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .dropdown div:hover {
+    background-color: red;
+  }
+
+  .result-list {
+    margin-top: 20px;
+    font-family: "Gill Sans", sans-serif;
+  }
+
+ .big-checkbox {
+ width: 20px;
+ height: 20px;
+ transform: scale(1);
+ }
+
+.top-dropdown {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  position: relative;
+  transform: scale(1.5);
+}
+
+#counters {
+    font-size: 25px;
+    font-family: "Gill Sans", sans-serif;
+    color: red
+
+  }
+</style>
+</head>
+<body>
+
+
+  <div class="top-dropdown">
+  <select id="topDropdown">
+    <option value="">Select Floor</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="10">10</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+  </select>
+</div>
+
+<div id="left-aligned-boxes">
+  <div id="boxes">
+    <div class="box" data-box="01-12">01-12</div>
+    <div class="box" data-box="01-11">01-11</div>
+    <div class="box" data-box="01-10">01-10</div>
+    <div class="box" data-box="01-09">01-09</div>
+    <div class="box" data-box="01-08">01-08</div>
+    <div class="box" data-box="01-07">01-07</div>
+  </div>
+  
+  
+  <div id="boxes">
+    <div class="box" data-box="01-01">01-01</div>
+    <div class="box" data-box="01-02">01-02</div>
+    <div class="box" data-box="01-03">01-03</div>
+    <div class="box" data-box="01-04">01-04</div>
+    <div class="box" data-box="01-05">01-05</div>
+    <div class="box" data-box="01-06">01-06</div>
+  </div>
+  
+  <br>
+  
+  <div id="boxes">
+    <div class="box" data-box="02-12">02-12</div>
+    <div class="box" data-box="02-11">02-11</div>
+    <div class="box" data-box="02-10">02-10</div>
+    <div class="box" data-box="02-09">02-09</div>
+    <div class="box" data-box="02-08">02-08</div>
+    <div class="box" data-box="02-07">02-07</div>
+  </div>
+  
+  <div id="boxes">
+    <div class="box" data-box="02-01">02-01</div>
+    <div class="box" data-box="02-02">02-02</div>
+    <div class="box" data-box="02-03">02-03</div>
+    <div class="box" data-box="02-04">02-04</div>
+    <div class="box" data-box="02-05">02-05</div>
+    <div class="box" data-box="02-06">02-06</div>
+  </div>
+  
+  <br>
+  
+  <div id="boxes">
+    <div class="box" data-box="03-12">03-12</div>
+    <div class="box" data-box="03-11">03-11</div>
+    <div class="box" data-box="03-10">03-10</div>
+    <div class="box" data-box="03-09">03-09</div>
+    <div class="box" data-box="03-08">03-08</div>
+    <div class="box" data-box="03-07">03-07</div>
+  </div>
+  
+  <div id="boxes">
+    <div class="box" data-box="03-01">03-01</div>
+    <div class="box" data-box="03-02">03-02</div>
+    <div class="box" data-box="03-03">03-03</div>
+    <div class="box" data-box="03-04">03-04</div>
+    <div class="box" data-box="03-05">03-05</div>
+    <div class="box" data-box="03-06">03-06</div>
+  </div>
+  
+  <br>
+  <div id="boxes">
+    <div class="box" data-box="04-12">04-12</div>
+    <div class="box" data-box="04-11">04-11</div>
+    <div class="box" data-box="04-10">04-10</div>
+    <div class="box" data-box="04-09">04-09</div>
+    <div class="box" data-box="04-08">04-08</div>
+    <div class="box" data-box="04-07">04-07</div>
+  </div>
+  
+  <div id="boxes">
+    <div class="box" data-box="04-01">04-01</div>
+    <div class="box" data-box="04-02">04-02</div>
+    <div class="box" data-box="04-03">04-03</div>
+    <div class="box" data-box="04-04">04-04</div>
+    <div class="box" data-box="04-05">04-05</div>
+    <div class="box" data-box="04-06">04-06</div>
+  </div>
+  
+  <br>
+  
+  <div id="boxes">
+    <div class="box" data-box="05-12">05-12</div>
+    <div class="box" data-box="05-11">05-11</div>
+    <div class="box" data-box="05-10">05-10</div>
+    <div class="box" data-box="05-09">05-09</div>
+    <div class="box" data-box="05-08">05-08</div>
+    <div class="box" data-box="05-07">05-07</div>
+  </div>
+  
+  <div id="boxes">
+    <div class="box" data-box="05-01">06-01</div>
+    <div class="box" data-box="05-02">06-02</div>
+    <div class="box" data-box="05-03">06-03</div>
+    <div class="box" data-box="05-04">06-04</div>
+    <div class="box" data-box="05-05">06-05</div>
+    <div class="box" data-box="05-06">06-06</div>
+  </div>
+  
+  <br>
+  
+  <div id="boxes">
+  <div class="box" data-box="06-12">06-12</div>
+  <div class="box" data-box="06-11">06-11</div>
+  <div class="box" data-box="06-10">06-10</div>
+  <div class="box" data-box="06-09">06-09</div>
+  <div class="box" data-box="06-08">06-08</div>
+  <div class="box" data-box="06-07">06-07</div>
+  </div>
+  
+  <div id="boxes">
+  <div class="box" data-box="06-01">06-01</div>
+  <div class="box" data-box="06-02">06-02</div>
+  <div class="box" data-box="06-03">06-03</div>
+  <div class="box" data-box="06-04">06-04</div>
+  <div class="box" data-box="06-05">06-05</div>
+  <div class="box" data-box="06-06">06-06</div>
+  </div>
+  
+  <br>
+  <div id="boxes">
+  <div class="box" data-box="07-03">07-03</div>
+  <div class="box" data-box="07-02">07-02</div>
+  <div class="box" data-box="07-01">07-01</div>
+  </div>
+  </div>
+  
+<div id="right-aligned-boxes">
+  <div id="boxes">
+    <div class="box" data-box="16-12">16-12</div>
+    <div class="box" data-box="16-11">16-11</div>
+    <div class="box" data-box="16-10">16-10</div>
+    <div class="box" data-box="16-09">16-09</div>
+    <div class="box" data-box="16-08">16-08</div>
+    <div class="box" data-box="16-07">16-07</div>
+  </div>
+
+  <div id="boxes">
+    <div class="box" data-box="16-01">16-01</div>
+    <div class="box" data-box="16-02">16-02</div>
+    <div class="box" data-box="16-03">16-03</div>
+    <div class="box" data-box="16-04">16-04</div>
+    <div class="box" data-box="16-05">16-05</div>
+    <div class="box" data-box="16-06">16-06</div>
+  </div>
+  <br>
+
+  <div id="boxes">
+    <div class="box" data-box="15-12">15-12</div>
+    <div class="box" data-box="15-11">15-11</div>
+    <div class="box" data-box="15-10">15-10</div>
+    <div class="box" data-box="15-09">15-09</div>
+    <div class="box" data-box="15-08">15-08</div>
+    <div class="box" data-box="15-07">15-07</div>
+  </div>
+
+  <div id="boxes">
+    <div class="box" data-box="15-01">15-01</div>
+    <div class="box" data-box="15-02">15-02</div>
+    <div class="box" data-box="15-03">15-03</div>
+    <div class="box" data-box="15-04">15-04</div>
+    <div class="box" data-box="15-05">15-05</div>
+    <div class="box" data-box="15-06">15-06</div>
+  </div>
+  <br>
+
+  <div id="boxes">
+    <div class="box" data-box="14-12">14-12</div>
+    <div class="box" data-box="14-11">14-11</div>
+    <div class="box" data-box="14-10">14-10</div>
+    <div class="box" data-box="14-09">14-09</div>
+    <div class="box" data-box="14-08">14-08</div>
+    <div class="box" data-box="14-07">14-07</div>
+  </div>
+
+  <div id="boxes">
+    <div class="box" data-box="14-01">14-01</div>
+    <div class="box" data-box="14-02">14-02</div>
+    <div class="box" data-box="14-03">14-03</div>
+    <div class="box" data-box="14-04">14-04</div>
+    <div class="box" data-box="14-05">14-05</div>
+    <div class="box" data-box="14-06">14-06</div>
+  </div>
+  <br>
+
+  <div id="boxes">
+    <div class="box" data-box="13-12">13-12</div>
+    <div class="box" data-box="13-11">13-11</div>
+    <div class="box" data-box="13-10">13-10</div>
+    <div class="box" data-box="13-09">13-09</div>
+    <div class="box" data-box="13-08">13-08</div>
+    <div class="box" data-box="13-07">13-07</div>
+  </div>
+
+  <div id="boxes">
+    <div class="box" data-box="13-01">13-01</div>
+    <div class="box" data-box="13-02">13-02</div>
+    <div class="box" data-box="13-03">13-03</div>
+    <div class="box" data-box="13-04">13-04</div>
+    <div class="box" data-box="13-05">13-05</div>
+    <div class="box" data-box="13-06">13-06</div>
+  </div>
+  <br>
+
+  <div id="boxes">
+    <div class="box" data-box="12-12">12-12</div>
+    <div class="box" data-box="12-11">12-11</div>
+    <div class="box" data-box="12-10">12-10</div>
+    <div class="box" data-box="12-09">12-09</div>
+    <div class="box" data-box="12-08">12-08</div>
+    <div class="box" data-box="12-07">12-07</div>
+  </div>
+
+  <div id="boxes">
+    <div class="box" data-box="12-01">12-01</div>
+    <div class="box" data-box="12-02">12-02</div>
+    <div class="box" data-box="12-03">12-03</div>
+    <div class="box" data-box="12-04">12-04</div>
+    <div class="box" data-box="12-05">12-05</div>
+    <div class="box" data-box="12-06">12-06</div>
+  </div>
+
+  <br>
+  <div id="boxes">
+    <div class="box" data-box="11-12">11-12</div>
+    <div class="box" data-box="11-11">11-11</div>
+    <div class="box" data-box="11-10">11-10</div>
+    <div class="box" data-box="11-09">11-09</div>
+    <div class="box" data-box="11-08">11-08</div>
+    <div class="box" data-box="11-07">11-07</div>
+  </div>
+
+  <div id="boxes">
+    <div class="box" data-box="11-01">11-01</div>
+    <div class="box" data-box="11-02">11-02</div>
+    <div class="box" data-box="11-03">11-03</div>
+    <div class="box" data-box="11-04">11-04</div>
+    <div class="box" data-box="11-05">11-05</div>
+    <div class="box" data-box="11-06">11-06</div>
+  </div>
+  <br>
+  <div id="boxes">
+    <div class="box" data-box="10-05">11-05</div>
+    <div class="box" data-box="10-06">11-06</div>
+    <div class="box" data-box="10-07">11-07</div>
+  </div> 
+
+  <div id="boxes">
+    <div class="box" data-box="10-01">10-01</div>
+    <div class="box" data-box="10-02">10-02</div>
+    <div class="box" data-box="10-03">10-03</div>
+    <div class="box" data-box="10-04">10-04</div>
+  </div>
+
+  <br>
+  <div id="boxes">
+    <div class="box" data-box="09-05">09-05</div>
+    <div class="box" data-box="09-06">09-06</div>
+    <div class="box" data-box="09-07">09-07</div>
+  </div> 
+
+  <div id="boxes">
+    <div class="box" data-box="09-01">09-01</div>
+    <div class="box" data-box="09-02">09-02</div>
+    <div class="box" data-box="09-03">09-03</div>
+    <div class="box" data-box="09-04">09-04</div>
+  </div>
+  <br>
+
+  <div id="boxes">
+    <div class="box" data-box="08-05">08-05</div>
+    <div class="box" data-box="08-06">08-06</div>
+    <div class="box" data-box="08-07">08-07</div>
+  </div> 
+
+  <div id="boxes">
+    <div class="box" data-box="08-01">08-01</div>
+    <div class="box" data-box="08-02">08-02</div>
+    <div class="box" data-box="08-03">08-03</div>
+    <div class="box" data-box="08-04">08-04</div>
+  </div> 
+</div>
+
+<ul class="result-list" id="result-list"></ul>
+<div id="counters">
+  Mice: <span id="mice-count">0</span>, Keyboards: <span id="keyboards-count">0</span>
+</div>
+
+<script>
+  const boxes = document.querySelectorAll('.box');
+  const resultList = document.getElementById('result-list');
+  const topDropdown = document.getElementById('topDropdown');
+  const miceCount = document.getElementById('mice-count');
+  const keyboardsCount = document.getElementById('keyboards-count');
+  
+  let mouseCounter = 0;
+  let keyboardCounter = 0;
+  
+  // Create the dropdown element once
+  const dropdown = document.createElement('div');
+  dropdown.classList.add('dropdown');
+  dropdown.innerHTML = `
+    <div data-option="Keyboard">Keyboard</div>
+    <div data-option="Mouse">Mouse</div>
+    <div data-option="Keyboard & Mouse">Keyboard & Mouse</div>
+  `;
+  
+  boxes.forEach(box => {
+    // Clone the dropdown and append it to each box
+    const boxDropdown = dropdown.cloneNode(true);
+    box.appendChild(boxDropdown);
+  
+    box.addEventListener('click', () => {
+      // Toggle the display of the cloned dropdown
+      boxDropdown.style.display = boxDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+  
+
+    // Add event listeners to the dropdown options
+    const options = boxDropdown.querySelectorAll('div');
+    options.forEach(option => {
+      option.addEventListener('click', (event) => {
+        const boxNumber = box.dataset.box;
+        const selectedOption = option.dataset.option;
+        const selectedTopNumber = topDropdown.value;
+
+        // Error handling: Check if a floor is selected
+        if (!selectedTopNumber) {
+        alert('Please select a floor first.');
+        return; // Exit the function if no floor is selected
+        }
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${selectedTopNumber}-${boxNumber}: ${selectedOption}`;
+        resultList.appendChild(listItem);
+
+  
+        // Update counters based on the selection
+        if (selectedOption === "Mouse") {
+          mouseCounter++;
+        } else if (selectedOption === "Keyboard") {
+          keyboardCounter++;
+        } else if (selectedOption === "Keyboard & Mouse") {
+          mouseCounter++;
+          keyboardCounter++;
+        }
+
+      // Create and append a checkbox to the list item
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.classList.add('big-checkbox');
+      listItem.appendChild(checkbox);
+      
+      resultList.appendChild(listItem);
+
+        // Update the displayed counters
+        miceCount.textContent = mouseCounter;
+        keyboardsCount.textContent = keyboardCounter;
+  
+        // Hide the dropdown immediately after selection
+        boxDropdown.style.display = 'none';
+  
+        // Stop the event from propagating to the parent box
+        event.stopPropagation();
+      });
+    });
+  });
+  </script>
+
+</body>
+</html>
